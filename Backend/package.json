@@ -2,7 +2,7 @@
   "name": "spur-ai-chat-backend",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
+
   "scripts": {
     "prisma:generate": "node node_modules/prisma/build/index.js generate",
     "prisma:migrate": "node node_modules/prisma/build/index.js migrate dev",
