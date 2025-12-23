@@ -6,7 +6,16 @@ import chatRoutes from "./routes/chat";
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",          // local dev
+      "https://spur-f.onrender.com"     // production frontend
+    ],
+    methods: ["GET", "POST"],
+    credentials: false
+  })
+);
 
 app.use(express.json());
 

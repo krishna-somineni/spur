@@ -13,6 +13,8 @@ function App() {
   const [sessionId, setSessionId] = useState<string | null>("12344");
 
   const bottomRef = useRef<HTMLDivElement | null>(null);
+  const API_BASE = process.env.REACT_APP_API_BASE_URL || "http://localhost:3001";
+
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -27,7 +29,7 @@ function App() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3001/chat/message", {
+      const res = await fetch(`${API_BASE}/chat/message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
