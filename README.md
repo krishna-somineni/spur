@@ -1,35 +1,40 @@
 Tech Stack
-
-Frontend: React (Create React App, TypeScript)
-Backend: Node.js, TypeScript, Express
-Database: SQLite (via Prisma ORM)
-LLM: Google Gemini (via @google/genai)
-Other: Prisma, dotenv
+    
+    Frontend: React (Create React App, TypeScript)
+    Backend: Node.js, TypeScript, Express
+    Database: SQLite (via Prisma ORM)
+    LLM: Google Gemini (via @google/genai)
+    Other: Prisma, dotenv
 
 
 🛠️ How to Run Locally (Step by Step)
-1️⃣ Prerequisites
-Node.js v20 LTS(imp)
-npm
+
+
+ Prerequisites
+ 
+    Node.js v20 LTS(imp)
+    npm
 ----------------------------------------------------------------------
 
-2️⃣ Clone the repository
-git clone <your-repo-url>
-cd spur
+ Clone the repository
+ 
+    git clone <your-repo-url>
+    cd spur
 ----------------------------------------------------------------------
 
-3️⃣ Backend Setup
-cd backend
-npm install
+ Backend Setup
+ 
+    cd backend
+    npm install
 ----------------------------------------------------------------------
 
 4️⃣ Configure Environment Variables
 
-Create a .env file in backend/ using the example:
-cp .env.example .env
-Update .env:
-GEMINI_API_KEY=your_google_gemini_api_key
-.env is ignored via .gitignore and never committed.
+    Create a .env file in backend/ using the example:
+    cp .env.example .env
+    Update .env:
+    GEMINI_API_KEY=your_google_gemini_api_key
+    .env is ignored via .gitignore and never committed.
 
 ----------------------------------------------------------------------
 
@@ -37,39 +42,35 @@ GEMINI_API_KEY=your_google_gemini_api_key
 
 Run migrations:
 
-npm run prisma:generate
-npm run prisma:migrate -- --name init
+    npm run prisma:generate
+    npm run prisma:migrate -- --name init
 
 
 This will:
+    
+    Create a local SQLite database
+    Create Conversation and Message tables
 
-Create a local SQLite database
+----------------------------------------------------------------------
 
-Create Conversation and Message tables
+ Start Backend Server
+ 
+    npm run dev
+    Backend runs at:
+    http://localhost:3001
 
 ----------------------------------------------------------------------
 
 
-6️⃣ Start Backend Server
-npm run dev
+Frontend Setup
 
-
-Backend runs at:
-
-http://localhost:3001
-
-----------------------------------------------------------------------
-
-
-7️⃣ Frontend Setup
-cd ../react-ui
-npm install
-npm start
+    cd ../react-ui
+    npm install
+    npm start
 
 
 Frontend runs at:
-
-http://localhost:3000
+    http://localhost:3000
 
 ----------------------------------------------------------------------
 
